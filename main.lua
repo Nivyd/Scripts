@@ -1,65 +1,86 @@
 
-local First = Instance.new("ScreenGui")
+local EI = Instance.new("ScreenGui")
 local TextLabel = Instance.new("TextLabel")
 local UICorner = Instance.new("UICorner")
 local Frame = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
-local Zer0 = Instance.new("TextButton")
+local UIGradient = Instance.new("UIGradient")
+local TextButton = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
-local Shrawu = Instance.new("TextButton")
+local UIGradient_2 = Instance.new("UIGradient")
+local TextButton_2 = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
+local UIGradient_3 = Instance.new("UIGradient")
 
-First.Name = "First"
-First.Parent = game.CoreGui
-First.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+EI.Name = "EI"
+EI.Parent = game.CoreGui
+EI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-TextLabel.Parent = First
+TextLabel.Parent = EI
 TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.Position = UDim2.new(0.150366753, 0, 0.146110058, 0)
-TextLabel.Size = UDim2.new(0, 422, 0, 41)
-TextLabel.Font = Enum.Font.JosefinSans
+TextLabel.Position = UDim2.new(0.26405865, 0, 0.18785578, 0)
+TextLabel.Size = UDim2.new(0, 281, 0, 50)
+TextLabel.SizeConstraint = Enum.SizeConstraint.RelativeYY
 TextLabel.Text = "Scripts"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 30.000
-TextLabel.Draggable = true
+TextLabel.TextSize = 20.000
 TextLabel.Active = true
+TextLabel.Draggable = true
 
 UICorner.Parent = TextLabel
 
 Frame.Parent = TextLabel
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.Position = UDim2.new(0, 0, 1, 0)
-Frame.Size = UDim2.new(0, 422, 0, 333)
+Frame.Position = UDim2.new(0, 0, 0.880000174, 0)
+Frame.Size = UDim2.new(0, 281, 0, 262)
 
 UICorner_2.Parent = Frame
 
-Zer0.Name = "Zer0"
-Zer0.Parent = TextLabel
-Zer0.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Zer0.Position = UDim2.new(0.263033181, 0, 2.07317066, 0)
-Zer0.Size = UDim2.new(0, 200, 0, 50)
-Zer0.Font = Enum.Font.SourceSans
-Zer0.Text = "Zer0"
-Zer0.TextColor3 = Color3.fromRGB(255, 255, 255)
-Zer0.TextSize = 14.000
-Zer0.MouseButton1Click:connect(function()
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(116, 116, 116)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient.Parent = Frame
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.Position = UDim2.new(0.142348751, 0, 0.160305336, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.Text = "Zer0"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+TextButton.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/Zer0Hub/main/GameScripts/6299805723.lua", true))()
 end)
 
 
-UICorner_3.Parent = Zer0
+UICorner_3.Parent = TextButton
 
-Shrawu.Name = "Shrawu"
-Shrawu.Parent = TextLabel
-Shrawu.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Shrawu.Position = UDim2.new(0.263033181, 0, 6.46341467, 0)
-Shrawu.Size = UDim2.new(0, 200, 0, 50)
-Shrawu.Font = Enum.Font.SourceSans
-Shrawu.Text = "Shrawu"
-Shrawu.TextColor3 = Color3.fromRGB(247, 247, 247)
-Shrawu.TextSize = 14.000
-Shrawu.MouseButton1Click:connect(function()
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(116, 116, 116)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_2.Parent = TextButton
+
+TextButton_2.Parent = Frame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.Position = UDim2.new(0.142348751, 0, 0.645038188, 0)
+TextButton_2.Size = UDim2.new(0, 200, 0, 50)
+TextButton_2.Text = "Shrawu"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextSize = 14.000
+TextButton_2.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nivyd/Afs/main/AFS.lua", true))()
 end)
 
-UICorner_4.Parent = Shrawu
+
+UICorner_4.Parent = TextButton_2
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(116, 116, 116)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_3.Parent = TextButton_2
+
+local toggle2 =  game.CoreGui["EI"]
+local toggle = false function onKeyPress(actionName, userInputState, inputObject)
+	if userInputState == Enum.UserInputState.Begin then
+		if toggle == false then
+			toggle = true
+			toggle2.Enabled = true
+		else
+			toggle = false
+			toggle2.Enabled = false
+		end
+	end
+end game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode.LeftControl)
